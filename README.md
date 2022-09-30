@@ -28,6 +28,57 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
+Use
+-------------
+A simple job that just inject a service and use it.
+
+```csharp
+using Sample.Service;
+
+public class SimpleJob
+{
+    private ITestService _testService;
+
+    public SimpleJob(ITestService testService)
+    {
+        _testService = testService;
+    }
+
+    public async Task DoJobAsync()
+    {
+        var jobId = await _testService.GetCurrentJobIdAsync();
+    }
+}
+```
+
+A service that use IPerformContextAccessor
+```csharp
+public class TestService : ITestService
+{
+    private IPerformContextAccessor _performContextAccessor;
+
+    public TestService(IPerformContextAccessor performContextAccessor)
+    {
+        _performContextAccessor = performContextAccessor;
+    }
+
+    public async Task<string> GetCurrentJobIdAsync()
+    {
+        var jobId = _performContextAccessor.PerformingContext.BackgroundJob.Id;
+        return await Task.FromResult(jobId);
+    }
+}
+```
+
+Motivation
+-------------
+Access PerformContext (basically JobId) on a custom NLog layout.
+A NLog layout writing `hangfire-jobid`:
+
+`"layout": "${longdate}|${level:uppercase=true}|${logger}|${message}|${hangfire-jobid}|${exception:format=toString}",`
+
+PS: NLog *HangfireJobIdLayoutRenderer* is coming soon on a different package
+
 Remarks
 -------------
 As already defined for IHttpContextAccessor
