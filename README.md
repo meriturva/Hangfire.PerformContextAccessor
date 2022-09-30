@@ -1,5 +1,7 @@
 # Hangfire.PerformContextAccessor
 
+[![Latest version](https://img.shields.io/nuget/v/Hangfire.svg)](https://www.nuget.org/packages?q=Bonura.Hangfire.PerformContextAccessor)
+
 Use PerformContextAccessor to access to PerformContext outside Job execution methods. It's only necessary to use IPerformContextAccessor when you need access to the job PerformContext inside a service.
 
 Installation
