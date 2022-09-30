@@ -72,8 +72,7 @@ public class TestService : ITestService
 
 Motivation
 -------------
-Access PerformContext (basically JobId) on a custom NLog layout.
-A NLog layout writing `hangfire-jobid`:
+Access PerformContext (basically to get JobId) on a custom NLog layout (`hangfire-jobid`):
 
 `"layout": "${longdate}|${level:uppercase=true}|${logger}|${message}|${hangfire-jobid}|${exception:format=toString}",`
 
