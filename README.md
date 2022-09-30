@@ -83,9 +83,8 @@ Remarks
 As already defined for IHttpContextAccessor
 
 * IPerformContextAccessor interface should be used with caution. As always, the PerformContext must not be captured outside of the Job execution flow.
-IPerformContextAccessor:
-* Relies on System.Threading.AsyncLocal which can have a negative performance impact on asynchronous calls.
+* IPerformContextAccessor: Relies on System.Threading.AsyncLocal which can have a negative performance impact on asynchronous calls.
 * Creates a dependency on "ambient state" which can make testing more difficult.
-* IPerformContextAccessor.HttpContext may be null if accessed outside of the request flow.
+* IPerformContextAccessor.PerformContext may be null if accessed outside of the Job execution flow.
 * To access information from PerformContext outside the Job execution flow, copy the information inside the execution flow. Be careful to copy the actual data and not just references. For example, rather than copying a reference to an IDictionary, copy the relevant header values or copy the entire dictionary key by key before leaving the flow.
 * Don't capture IPerformContextAccessor.PerformContext in a constructor.
