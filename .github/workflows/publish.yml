@@ -28,7 +28,7 @@ jobs:
         PROJECT_FILE_PATH: Hangfire.PerformContextAccessor/Hangfire.PerformContextAccessor.csproj
         
         # API key to authenticate with NuGet server
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
 
         # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
         INCLUDE_SYMBOLS: true
