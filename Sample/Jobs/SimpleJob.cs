@@ -1,5 +1,4 @@
-﻿using Hangfire.Server;
-using Sample.Service;
+﻿using Sample.Service;
 
 namespace Sample.Jobs
 {
@@ -7,7 +6,7 @@ namespace Sample.Jobs
     {
         private ILogger<SimpleJob> _logger;
         private ITestService _testService;
-        
+
         public SimpleJob(ILogger<SimpleJob> logger, ITestService testService)
         {
             _logger = logger;
