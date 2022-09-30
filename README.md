@@ -16,10 +16,10 @@ After installation, update your existing [OWIN Startup](http://www.asp.net/aspne
 ```csharp
 public void Configuration(IAppBuilder app)
 {
-    // Register IPerformContextAccessor as transient service
+    // Register IPerformContextAccessor as transient
     app.AddHangfirePerformContextAccessor();
 
-    // Add Hangfire services.
+    // Add Hangfire service
     app.AddHangfire(config =>
     {
       // Add filter to handle PerformContextAccessor
