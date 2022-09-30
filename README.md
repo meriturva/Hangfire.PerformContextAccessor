@@ -1,6 +1,6 @@
 # Hangfire.PerformContextAccessor
 
-PerformContextAccessor make possible to access to PerformContext outside Job execution methods. It's only necessary to use IPerformContextAccessor when you need access to the job PerformContext inside a service.
+Use PerformContextAccessor to access to PerformContext outside Job execution methods. It's only necessary to use IPerformContextAccessor when you need access to the job PerformContext inside a service.
 
 Installation
 -------------
@@ -30,7 +30,7 @@ public void Configuration(IAppBuilder app)
 
 Use
 -------------
-A simple job that just inject a service and use it.
+A simple job that just injects a service and uses it.
 
 ```csharp
 using Sample.Service;
