@@ -9,6 +9,7 @@
     <Authors>Diego Bonura</Authors>
     <Description>PerformContextAccessor for Hangfire</Description>
     <RepositoryUrl>https://github.com/meriturva/Hangfire.PerformContextAccessor.git</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
