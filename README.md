@@ -78,7 +78,7 @@ Access PerformContext (basically to get JobId) on a custom NLog layout (`hangfir
 
 `"layout": "${longdate}|${level:uppercase=true}|${logger}|${message}|${hangfire-jobid}|${exception:format=toString}",`
 
-PS: NLog *HangfireJobIdLayoutRenderer* is coming soon on a different package
+See *NLog Hangfire Layouts*: https://github.com/meriturva/NLog.HangfireLayouts
 
 Remarks
 -------------
