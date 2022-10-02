@@ -7,7 +7,7 @@ Use PerformContextAccessor to access to PerformContext outside Job execution met
 Installation
 -------------
 
-Hangfire is available as a NuGet package. You can install it using the NuGet Package Console window:
+Hangfire.PerformContextAccessor is available as a NuGet package. You can install it using the NuGet Package Console window:
 
 ```
 PM> Install-Package Bonura.Hangfire.PerformContextAccessor
@@ -78,7 +78,7 @@ Access PerformContext (basically to get JobId) on a custom NLog layout (`hangfir
 
 `"layout": "${longdate}|${level:uppercase=true}|${logger}|${message}|${hangfire-jobid}|${exception:format=toString}",`
 
-PS: NLog *HangfireJobIdLayoutRenderer* is coming soon on a different package
+See *NLog Hangfire Layouts*: https://github.com/meriturva/NLog.HangfireLayouts
 
 Remarks
 -------------
