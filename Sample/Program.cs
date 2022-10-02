@@ -1,5 +1,7 @@
 using Hangfire;
 using Hangfire.PerformContextAccessor;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Sample.Jobs;
 using Sample.Service;
 
