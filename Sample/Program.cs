@@ -10,10 +10,10 @@ builder.Services.AddHangfirePerformContextAccessor();
 
 // Add Hangfire services.
 GlobalConfiguration.Configuration.UseInMemoryStorage();
-builder.Services.AddHangfire(config =>
+builder.Services.AddHangfire((serviceProvider, config) =>
 {
     // Add filter to handle PerformContextAccessor
-    config.UsePerformContextAccessorFilter();
+    config.UsePerformContextAccessorFilter(serviceProvider);
 });
 
 // Add the processing server as IHostedService
