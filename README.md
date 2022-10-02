@@ -7,7 +7,7 @@ Use PerformContextAccessor to access to PerformContext outside Job execution met
 Installation
 -------------
 
-Hangfire is available as a NuGet package. You can install it using the NuGet Package Console window:
+Hangfire.PerformContextAccessor is available as a NuGet package. You can install it using the NuGet Package Console window:
 
 ```
 PM> Install-Package Bonura.Hangfire.PerformContextAccessor
