@@ -20,7 +20,7 @@ namespace Sample.Jobs
             _logger.LogInformation("Current JobId from service sync {jobId}", _testService.GetCurrentJobId());
 
             var jobId = await _testService.GetCurrentJobIdAsync();
-            _logger.LogInformation("Current JobId from service  async {jobId}", jobId);
+            _logger.LogInformation("Current JobId from service async {jobId}", jobId);
 
             await Task.CompletedTask;
         }
