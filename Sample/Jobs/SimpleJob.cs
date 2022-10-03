@@ -1,4 +1,6 @@
-﻿using Sample.Service;
+﻿using Microsoft.Extensions.Logging;
+using Sample.Service;
+using System.Threading.Tasks;
 
 namespace Sample.Jobs
 {

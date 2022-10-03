@@ -1,4 +1,5 @@
 ﻿using Hangfire.PerformContextAccessor;
+using System.Threading.Tasks;
 
 namespace Sample.Service
 {
