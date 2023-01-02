@@ -18,9 +18,9 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack --output ./artifacts
+      run: dotnet pack --output ./artifacts --include-symbols -p:SymbolPackageFormat=snupkg
     - name: Publish packages
-      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{secrets.NUGET_TOKEN}}
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{secrets.NUGET_API_KEY}}
     - uses: actions/upload-artifact@v3.1.1
       with:
         name: artifacts
