@@ -19,6 +19,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack --output ./artifacts
+    - uses: actions/upload-artifact@v3.1.1
+      with:
+        name: artifacts
+        path: ./artifacts
     - name: publish on version change
       uses: brandedoutcast/publish-nuget@v2
       with:
