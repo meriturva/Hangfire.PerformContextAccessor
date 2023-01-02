@@ -17,11 +17,10 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-  pack:
-    runs-on: ubuntu-latest
-    steps:
     - name: Pack
       run: dotnet pack --output ./artifacts
+    - name: Publish packages
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{secrets.NUGET_TOKEN}}
     - uses: actions/upload-artifact@v3.1.1
       with:
         name: artifacts
