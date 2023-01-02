@@ -4,9 +4,7 @@ on: workflow_dispatch
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -19,17 +17,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+  pack:
+    runs-on: ubuntu-latest
+    steps:
     - name: Pack
       run: dotnet pack --output ./artifacts
     - uses: actions/upload-artifact@v3.1.1
       with:
         name: artifacts
         path: ./artifacts
-    - name: publish on version change
-      uses: brandedoutcast/publish-nuget@v2
-      with:
-        # Filepath of the project to be packaged, relative to root of repository
-        PROJECT_FILE_PATH: Hangfire.PerformContextAccessor/Hangfire.PerformContextAccessor.csproj
-        
-        # API key to authenticate with NuGet server
-        NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
