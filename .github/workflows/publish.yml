@@ -19,6 +19,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack --output ./artifacts
     - name: publish on version change
       uses: brandedoutcast/publish-nuget@v2
       with:
