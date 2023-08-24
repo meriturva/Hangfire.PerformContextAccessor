@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hangfire" Version="1.8.4" />
+    <PackageReference Include="Hangfire" Version="1.8.5" />
     <PackageReference Include="Hangfire.InMemory" Version="0.5.1" />
   </ItemGroup>
 
