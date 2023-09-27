@@ -12,8 +12,14 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/meriturva/Hangfire.PerformContextAccessor</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Hangfire.Core" Version="1.8.5" />
   </ItemGroup>
