@@ -17,11 +17,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Hangfire.Core" Version="1.8.5" />
+    <PackageReference Include="Hangfire.Core" Version="1.8.10" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
